@@ -1,0 +1,19 @@
+{
+  "env": {
+    "node": true,
+    "jest": true,
+    "es6": true
+  },
+  "extends": [
+    "airbnb-typescript/base"
+  ],
+  "parserOptions": {
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "max-len": [
+      "error",
+      120
+    ]
+  }
+}
