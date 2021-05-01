@@ -6,6 +6,7 @@
   "main": "index.js",
   "scripts": {
     "clean": "rimraf build",
+    "tsc": "tsc",
     "build": "npm run clean && tsc",
     "test": "npm run clean && jest",
     "coverage": "npm test -- --coverage",
