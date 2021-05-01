@@ -55,7 +55,7 @@
         }
       }
     },
-    "/v1/supermarket": {
+    "/v1/supermarkets/{cep}": {
       "get": {
         "summary": "Your GET endpoint",
         "tags": [],
@@ -88,10 +88,24 @@
                 }
               }
             }
+          },
+          "400": {
+            "$ref": "#/components/responses/BadRequestError"
           }
         },
         "operationId": "get-v1-supermarket"
-      }
+      },
+      "parameters": [
+        {
+          "schema": {
+            "type": "string"
+          },
+          "name": "cep",
+          "in": "path",
+          "required": true,
+          "description": "CEP do endereço"
+        }
+      ]
     }
   },
   "components": {

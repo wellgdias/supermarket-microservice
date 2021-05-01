@@ -1,9 +1,9 @@
 import { ServiceError } from '../business/errors';
-import repository from '../databases/supermarket-repository';
+import supermarketRepository from '../databases/supermarket-repository';
 
-export default async function getSupermarketService() {
+export default async function getSupermarket(coverageArea: number[][][][]) {
   try {
-    const supermarkets = await repository.show();
+    const supermarkets = await supermarketRepository.getAll(coverageArea);
     return supermarkets;
   } catch (error) {
     throw new ServiceError('Erro ao buscar os supermercados disponíveis');

@@ -4,6 +4,13 @@ const config = () => ({
   application: {
     name: 'envVars.APPLICATION_NAME',
     version: 'envVars.APPLICATION_VERSION',
+    mongoUri: 'envVars.MONGODB_URI',
+  },
+  services: {
+    cep: {
+      url: 'envVars.CEP_SERVICE',
+      token: 'envVars.AUTHORIZATION_TOKEN',
+    },
   },
 });
 

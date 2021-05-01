@@ -8,6 +8,8 @@ export default joi
     APPLICATION_NAME: joi.string().default(name),
     APPLICATION_VERSION: joi.string().default(version),
     MONGODB_URI: joi.string().required(),
+    CEP_SERVICE: joi.string().required(),
+    AUTHORIZATION_TOKEN: joi.string().required(),
   })
   .unknown()
   .required();

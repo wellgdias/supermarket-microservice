@@ -12,6 +12,12 @@ const loadConfig = (configSchema: any, data: any) => {
       version: envVars.APPLICATION_VERSION,
       mongoUri: envVars.MONGODB_URI,
     },
+    services: {
+      cep: {
+        url: envVars.CEP_SERVICE,
+        token: envVars.AUTHORIZATION_TOKEN,
+      },
+    },
   };
 };
 
