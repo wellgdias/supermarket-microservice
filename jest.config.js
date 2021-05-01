@@ -7,7 +7,6 @@ module.exports = {
   coverageReporters: ['json', 'lcov', 'text', 'clover'],
   collectCoverage: true,
   collectCoverageFrom: ['src/**/*.{ts,tsx}'],
-  testResultsProcessor: 'jest-sonar-reporter',
   testMatch: ['**/?(*.)+(spec|test).+(ts|tsx|js)'],
   clearMocks: true,
   setupFiles: ['./jest.setup.js'],
