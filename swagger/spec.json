@@ -76,13 +76,16 @@
                         "type": "string"
                       },
                       "name": {
-                        "type": "string",
-                        "minLength": 1
+                        "type": "string"
+                      },
+                      "logo": {
+                        "type": "string"
                       }
                     },
                     "required": [
                       "_id",
-                      "name"
+                      "name",
+                      "logo"
                     ]
                   }
                 }

@@ -28,7 +28,6 @@
     "express-request-id": "^1.4.1",
     "joi": "^17.2.1",
     "mongodb": "^3.6.6",
-    "mongoose": "^5.12.5",
     "rimraf": "^3.0.2",
     "swagger-ui-express": "^4.1.4",
     "uuid": "^8.3.1"

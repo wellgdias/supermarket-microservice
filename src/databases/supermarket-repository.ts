@@ -22,7 +22,7 @@ async function getAll(coverageArea: number[][][][]) {
     const supermarkets = response.map((supermarket: any) => ({
       _id: supermarket._id.toString(),
       name: supermarket.name,
-      address: supermarket.address,
+      logo: supermarket.logo,
     }));
     return supermarkets;
   } catch (error) {
