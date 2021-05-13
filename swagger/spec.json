@@ -67,17 +67,23 @@
                 "schema": {
                   "description": "",
                   "type": "object",
+                  "x-examples": {
+                    "example-1": {
+                      "data": [
+                        {
+                          "_id": "string",
+                          "name": "string",
+                          "logo": "string"
+                        }
+                      ]
+                    }
+                  },
                   "properties": {
                     "data": {
                       "type": "array",
                       "uniqueItems": true,
-                      "minItems": 1,
                       "items": {
-                        "required": [
-                          "_id",
-                          "name",
-                          "logo"
-                        ],
+                        "type": "object",
                         "properties": {
                           "_id": {
                             "type": "string",
@@ -91,24 +97,18 @@
                             "type": "string",
                             "minLength": 1
                           }
-                        }
+                        },
+                        "required": [
+                          "_id",
+                          "name",
+                          "logo"
+                        ]
                       }
                     }
                   },
                   "required": [
                     "data"
-                  ],
-                  "x-examples": {
-                    "example-1": {
-                      "data": [
-                        {
-                          "_id": "string",
-                          "name": "string",
-                          "logo": "string"
-                        }
-                      ]
-                    }
-                  }
+                  ]
                 },
                 "examples": {
                   "example-supermarket": {
