@@ -131,6 +131,9 @@
           },
           "404": {
             "$ref": "#/components/responses/NotFoundError"
+          },
+          "502": {
+            "$ref": "#/components/responses/ServiceError"
           }
         },
         "operationId": "get-v1-supermarket"
