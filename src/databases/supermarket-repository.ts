@@ -19,12 +19,13 @@ async function getAll(coverageArea: number[][][][]) {
       },
     }).toArray();
 
-    const supermarkets = response.map((supermarket: any) => ({
+    const supermarkets = response.map((supermarket) => ({
       _id: supermarket._id.toString(),
       name: supermarket.name,
       logo: supermarket.logo,
     }));
-    return supermarkets;
+
+    return { data: supermarkets };
   } catch (error) {
     throw new ServiceError(error);
   }

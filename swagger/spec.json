@@ -16,8 +16,8 @@
       }
     },
     {
-      "url": "http://civ-installment-microservice.super-app.k8s-dev.bancomidway.io",
-      "description": "(Internal) Development server"
+      "url": "https://marcoo-supermarket.herokuapp.com/",
+      "description": "(Internal) Production server"
     }
   ],
   "tags": [
@@ -65,28 +65,62 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "type": "array",
                   "description": "",
-                  "minItems": 1,
-                  "uniqueItems": true,
-                  "items": {
-                    "type": "object",
-                    "properties": {
-                      "_id": {
-                        "type": "string"
-                      },
-                      "name": {
-                        "type": "string"
-                      },
-                      "logo": {
-                        "type": "string"
+                  "type": "object",
+                  "properties": {
+                    "data": {
+                      "type": "array",
+                      "uniqueItems": true,
+                      "minItems": 1,
+                      "items": {
+                        "required": [
+                          "_id",
+                          "name",
+                          "logo"
+                        ],
+                        "properties": {
+                          "_id": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "name": {
+                            "type": "string",
+                            "minLength": 1
+                          },
+                          "logo": {
+                            "type": "string",
+                            "minLength": 1
+                          }
+                        }
                       }
-                    },
-                    "required": [
-                      "_id",
-                      "name",
-                      "logo"
-                    ]
+                    }
+                  },
+                  "required": [
+                    "data"
+                  ],
+                  "x-examples": {
+                    "example-1": {
+                      "data": [
+                        {
+                          "_id": "string",
+                          "name": "string",
+                          "logo": "string"
+                        }
+                      ]
+                    }
+                  }
+                },
+                "examples": {
+                  "example-supermarket": {
+                    "value": {
+                      "data": [
+                        {
+                          "_id": "qwavwrgwrg",
+                          "name": "Supermercado SASSS",
+                          "logo": "https://i.ibb.co/4192kXb/677275-1.jpg"
+                        }
+                      ]
+                    }
                   }
                 }
               }
@@ -94,6 +128,9 @@
           },
           "400": {
             "$ref": "#/components/responses/BadRequestError"
+          },
+          "404": {
+            "$ref": "#/components/responses/NotFoundError"
           }
         },
         "operationId": "get-v1-supermarket"
